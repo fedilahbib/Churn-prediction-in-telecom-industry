@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+     <link href="css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="{{url_for('.static', filename='bootstrap.min.css')}}">
+
+     <meta charset="utf-8">
+     <title>Churn </title>
+</head>
+
+<body>
+     <div class="container-fluid bg-light text-dark">
+          <!-- Content here -->
+          <div class=" row">
+          <div class="col-xl-3">
+          </div>
+          <div class="col-xl-9">
+               <h1 class="text-dark">Customer Churn Classification</h1>
+
+          </div>
+
+
+
+     </div>
+
+     <div class="row">
+          <div class="col-xl-2">
+          </div>
+
+          <div class="col-xl-10">
+               <form action="http://localhost:5000/formulaire" method="post">
+
+                    <br>
+                    <div class="row">
+                         <div class="col-sm-4">
+
+                              <label>Total Charges</label> : <input type="number" step="0.01" name="Total_Charges" />
+
+                         </div>
+                         <div class="col-sm-4">
+                              <label>Tenure Months</label> : <input type="number" name="Tenure_Months" /><br><br>
+
+                         </div>
+                    </div>
+                    <div class="row">
+                         <div class="col-sm-4">
+
+                              <label>Monthly Charges</label> : <input type="number" step="0.01"
+                                   name="Monthly_Charges" />
+
+                         </div>
+                         <div class="col-sm-4">
+                              <label>Payment Method</label> :
+                              <select name="Payment_Method">
+                                   <option value="Mailed check">Mailed check</option>
+                                   <option value="Electronic check">Electronic check</option>
+                                   <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+                                   <option value="Credit card (automatic)">Credit card (automatic)</option>
+                              </select><br><br>
+                         </div>
+                    </div>
+
+
+                    <div class="row">
+                         <div class="col-sm-4">
+
+                              <label>Multiple Lines</label> :
+                              <select name="Multiple_Lines">
+                                   <option value="No">No</option>
+                                   <option value="Yes">Yes</option>
+                                   <option value="No phone service">No phone service</option>
+                              </select>
+
+                         </div>
+                         <div class="col-sm-4">
+
+                              <label>Internet Service</label> :
+                              <select name="Internet_Service">
+                                   <option value="DSL">DSL</option>
+                                   <option value="Fiber optic">Fiber optic</option>
+                                   <option value="No">No</option>
+                              </select><br><br>
+                         </div>
+                    </div>
+
+                    <div class="row">
+                         <div class="col-sm-4">
+                              <label>Online Security</label> :
+                              <select name="Online_Security">
+                                   <option value="Yes">Yes</option>
+                                   <option value="No">No</option>
+                                   <option value="No internet service">No internet service</option>
+                              </select>
+
+
+                         </div>
+                         <div class="col-sm-4">
+                              <label>Online Backup</label> :
+                              <select name="Online_Backup">
+                                   <option value="Yes">Yes</option>
+                                   <option value="No">No</option>
+                                   <option value="No internet service">No internet service</option>
+
+                              </select><br><br>
+                         </div>
+                    </div>
+                    <div class="row">
+                         <div class="col-sm-4">
+
+                              <label>Device Protection</label> :
+                              <select name="Device_Protection">
+                                   <option value="Yes">Yes</option>
+                                   <option value="No">No</option>
+                                   <option value="No internet service">No internet service</option>
+
+                              </select>
+
+                         </div>
+                         <div class="col-sm-4">
+                              <label>Tech Support</label> :
+                              <select name="Tech_Support">
+                                   <option value="Yes">Yes</option>
+                                   <option value="No">No</option>
+                                   <option value="No internet service">No internet service</option>
+
+
+                              </select><br><br>
+                         </div>
+                    </div>
+
+                    <div class="row">
+                         <div class="col-sm-4">
+
+                              <label>Contract</label> :
+                              <select name="Contract">
+                                   <option value="Month-to-month">Month-to-month</option>
+                                   <option value="Two year">Two year</option>
+                                   <option value="One year">One year</option>
+                              </select>
+
+                         </div>
+                         <div class="col-sm-4">
+                              <label>Phone Service</label> :
+                              <select name="Phone_Service">
+                                   <option value="Yes">Yes</option>
+                                   <option value="No">No</option>
+                              </select><br><br>
+                         </div>
+                    </div>
+                    <div class="row">
+                         <div class="col-sm-4">
+                              <label>Paperless Billing</label> :
+                              <select name="Paperless_Billing">
+                                   <option value="No">No</option>
+                                   <option value="Yes">Yes</option>
+                              </select>
+                          
+                         </div>
+                         <div class="col-sm-4">
+                              <label>Senior Citizen</label> :
+                              <select name="Senior_Citizen">
+                                   <option value="No">No</option>
+                                   <option value="Yes">Yes</option>
+
+                              </select><br><br>
+                         </div>
+                    </div>
+                    <div class="row">
+                         <div class="col-sm-4">
+
+                              <label>Partner</label> :
+                              <select name="Partner">
+                                   <option value="No">No</option>
+                                   <option value="Yes">Yes</option>
+                              </select>
+                         </div>
+                         <div class="col-sm-4">
+
+                              <label>Dependents</label> :
+                              <select name="Dependents">
+                                   <option value="No">No</option>
+                                   <option value="Yes">Yes</option>
+                              </select><br><br>
+                         </div>
+                    </div>
+                    <div class="row">
+                         <div class="col-sm-3">
+                          
+                         </div>
+                         <div class="col-sm-6">
+                              <input type="submit" value="Submit" class="btn btn-primary btn-lg btn-block" />
+                         </div>
+                    </div>
+               </form>
+          </div>
+     </div>
+     </div>
+
+
+</body>
+
+</html>
